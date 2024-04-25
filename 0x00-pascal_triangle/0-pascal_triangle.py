@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 
 """
- pascal_triangle - function that returns a list of lists of 
- integers representing the Pascal’s triangle of n
- 
- n - is the number of rows of Pascal’s triangle
- 
- return - list of lists of integers representing Pascal’s triangle of n
+ pascal_triangle 
 """
 
 
 def pascal_triangle(n):
+    """
+    Returns a list of integers
+    representing the Pascal Triangle of n
+    returns empty list if n <= 0
+    """
     if n <= 0:
         return []
 
