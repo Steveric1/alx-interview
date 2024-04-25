@@ -5,6 +5,18 @@
 """
 
 
+def fact(n):
+    """
+    Returns the factorial of n
+    """
+    if n < 0:
+        return None  # or raise an exception
+    elif n == 0:
+        return 1
+    else:
+        return n * fact(n - 1)
+
+
 def pascal_triangle(n):
     """
     Returns a list of integers
@@ -17,8 +29,8 @@ def pascal_triangle(n):
     triangle = []
 
     for i in range(n):
-        row = [1] * (i + 1)
-        for j in range(1, i):
-            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
+        row = []
+        for j in range(i + 1):
+            row.append(fact(i) // (fact(j) * fact(i - j)))
         triangle.append(row)
     return triangle
