@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-from math import factorial
-
 """
  fact - function that calculates the factorial of a number
  n - is a number to calculate the factorial
@@ -15,6 +13,9 @@ def fact(n):
     else:
         return n * fact(n - 1)
 
+
+def cal_coefficient(i, j):
+    return fact(i) // (fact(j) * fact(i - j))
 
 """
  pascal_triangle - function that returns a list of lists of 
@@ -31,9 +32,7 @@ def pascal_triangle(n):
         return []
     triangle = []
     for i in range(n):
-        row = []
-        for j in range(i + 1):
-            row.append(factorial(i) // (factorial(j) * factorial(i - j)))
-        triangle.append(row)
+       row = [cal_coefficient(i, j) for j in range(i + 1)]
+       triangle.append(row)
 
     return triangle
