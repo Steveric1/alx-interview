@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+from math import factorial
+
 """
  fact - function that calculates the factorial of a number
  n - is a number to calculate the factorial
@@ -31,7 +33,7 @@ def pascal_triangle(n):
     for i in range(n):
         row = []
         for j in range(i + 1):
-            row.append(fact(i) // (fact(j) * fact(i - j)))
+            row.append(factorial(i) // (factorial(j) * factorial(i - j)))
         triangle.append(row)
 
     return triangle
