@@ -21,34 +21,41 @@ def print_logs():
     Raises:
         KeyboardInterrupt (Exception): handles this exception and raises it
     """
+
+    input_format = re.compile(
+        r'^(?P<ip>\S+) - \[(?P<date>.+)\] "GET /projects/260 HTTP/1.1" (?P<status>\d{3}) (?P<size>\d+)$'
+    )
+
     stdin = __import__('sys').stdin
     line_read = 0
     total_size = 0
     status_counts = {}
-    valid_status_codes = {'200', '301', '400',
-                          '401', '403', '404', '405', '500'}
+    valid_status_codes = {200, 301, 400, 401, 403, 404, 405, 500}
 
     try:
         for line in stdin:
             line_read += 1
-            # split the lines read for the ip, date, status and size
-            line = line.split()
 
-            try:
-                total_size += int(line[-1])
-                if line[-2] in valid_status_codes:
-                    if line[-2] in status_counts:
-                        status_counts[line[-2]] += 1
-                    else:
-                        status_counts[line[-2]] = 1
-            except (IndexError, ValueError):
-                pass
+            # Match the line against the regex pattern
+            match = input_format.match(line.strip())
+            if not match:
+                continue
+            # Extract File size and status code
+            size = int(match.group('size'))
+            status = int(match.group('status'))
+
+            total_size += size
+            if status in valid_status_codes:
+                if status in status_counts:
+                    status_counts[status] += 1
+                else:
+                    status_counts[status] = 1
 
             if line_read % 10 == 0:
                 print_stats(status_counts, total_size)
                 line_read = 0
-
         print_stats(status_counts, total_size)
+
     except KeyboardInterrupt:
         print_stats(status_counts, total_size)
         raise
