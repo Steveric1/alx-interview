@@ -4,7 +4,14 @@
 
 import sys
 import re
-from collections import defaultdict
+
+
+def print_stats(status_counts: int, file_size: int):
+    """function to print out the stats"""
+    print("File size: {}".format(file_size))
+    for status in sorted(status_counts):
+        if status_counts[status] > 0:
+            print("{}: {}".format(status, status_counts[status]))
 
 
 def main():
@@ -22,7 +29,7 @@ def main():
 
     line_read = 0
     total_size = 0
-    status_counts = defaultdict(int)
+    status_counts = {}
     valid_status_codes = {200, 301, 400, 401, 403, 404, 405, 500}
 
     try:
@@ -38,14 +45,15 @@ def main():
             status = int(match.group('status'))
 
             total_size += size
-            if status in valid_status_codes:
-                status_counts[status] += 1
+            try:
+                if status in valid_status_codes:
+                    status_counts[status] += 1
+            except KeyError:
+                status_counts[status] = 1
 
             if line_read % 10 == 0:
-                print("File size: {}".format(total_size))
-                for status in sorted(status_counts):
-                    if status_counts[status] > 0:
-                        print("{}: {}".format(status, status_counts[status]))
+                print_stats(status_counts, total_size)
+                line_read = 0
 
     except KeyboardInterrupt:
         raise
