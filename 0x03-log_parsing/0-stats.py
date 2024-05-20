@@ -57,6 +57,7 @@ def print_logs():
         print_stats(status_counts, total_size)
 
     except KeyboardInterrupt:
+        print_stats(status_counts, total_size)
         raise
 
 
