@@ -54,6 +54,7 @@ def print_logs():
             if line_read % 10 == 0:
                 print_stats(status_counts, total_size)
                 line_read = 0
+        print_stats(status_counts, total_size)
 
     except KeyboardInterrupt:
         raise
