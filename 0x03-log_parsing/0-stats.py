@@ -2,7 +2,6 @@
 
 """Write a script that reads stdin line by line and compute metrics"""
 
-import sys
 import re
 
 
@@ -26,14 +25,15 @@ def print_logs():
     input_format = re.compile(
         r'^(?P<ip>\S+) - \[(?P<date>.+)\] "GET /projects/260 HTTP/1.1" (?P<status>\d{3}) (?P<size>\d+)$'
     )
-
+    
+    stdin = __import__('sys').stdin
     line_read = 0
     total_size = 0
     status_counts = {}
     valid_status_codes = {200, 301, 400, 401, 403, 404, 405, 500}
 
     try:
-        for line in sys.stdin:
+        for line in stdin:
             line_read += 1
 
             # Match the line against the regex pattern
