@@ -14,7 +14,7 @@ def print_stats(status_counts: int, file_size: int):
             print("{}: {}".format(status, status_counts[status]))
 
 
-def main():
+def print_logs():
     """
     Reads logs from standard input and generates reports
     Reports:
@@ -60,4 +60,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    print_logs()
