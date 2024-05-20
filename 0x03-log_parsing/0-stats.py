@@ -25,7 +25,7 @@ def print_logs():
     input_format = re.compile(
         r'^(?P<ip>\S+) - \[(?P<date>.+)\] "GET /projects/260 HTTP/1.1" (?P<status>\d{3}) (?P<size>\d+)$'
     )
-    
+
     stdin = __import__('sys').stdin
     line_read = 0
     total_size = 0
@@ -45,11 +45,11 @@ def print_logs():
             status = int(match.group('status'))
 
             total_size += size
-            try:
-                if status in valid_status_codes:
+            if status in valid_status_codes:
+                if status in status_counts:
                     status_counts[status] += 1
-            except KeyError:
-                status_counts[status] = 1
+                else:
+                    status_counts[status] = 1
 
             if line_read % 10 == 0:
                 print_stats(status_counts, total_size)
