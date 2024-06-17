@@ -15,10 +15,9 @@ def rotate_2d_matrix(matrix):
     n = len(matrix)
     for i in range(n):
         for j in range(i):
-            temp = matrix[i][j]
-            matrix[i][j] = matrix[j][i]
-            matrix[j][i] = temp
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
+    # reverse each column
     for i in range(n):
         for j in range(int(n / 2)):
             temp = matrix[i][j]
