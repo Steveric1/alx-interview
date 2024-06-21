@@ -16,7 +16,9 @@ def makeChange(coins: List[int], total: int) -> int:
         return fewest number of coins needed to meet total
     """
 
-    if total == 0 or total < 0:
+    if total == 0:
+        return 0
+    if total < 0:
         return 0
 
     dp = [float('inf')] * (total + 1)
