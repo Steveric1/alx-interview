@@ -22,15 +22,8 @@ def makeChange(coins: List[int], total: int) -> int:
     dp = [float('inf')] * (total + 1)
     dp[0] = 0
 
-    coin_index = 0
-    coins_len = len(coins)
-
-    # loop through the coins
-    while coin_index < coins_len:
-        coin = coins[coin_index]
-        # update the amount by coin
+    for coin in coins:
         for amount in range(coin, total + 1):
             dp[amount] = min(dp[amount], dp[amount - coin] + 1)
-        coin_index += 1
 
     return dp[total] if dp[total] != float('inf') else -1
