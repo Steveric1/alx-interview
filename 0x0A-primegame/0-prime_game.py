@@ -30,10 +30,7 @@ def isWinner(x, nums):
             continue
 
         # Sieve of Eratosthenes
-        if n < 2:
-            return [False] * (n + 1)
         prime = [True] * (n + 1)
-        prime[0] = prime[1] = False
         p = 2
 
         while p * p <= n:
