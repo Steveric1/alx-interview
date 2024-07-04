@@ -6,6 +6,24 @@ number choose in the given set of numbers.
 """
 
 
+def prime(n):
+    """
+    Return list of prime numbers between 1 and n inclusive
+    Args:
+       n(int): upper boundary of range. lower boundary is always 1
+    """
+    prime = [True] * (n + 1)
+    p = 2
+
+    while p * p < n:
+        if prime == True:
+            for i in range(p * p, n + 1, p):
+                prime[i] = False
+        p += 1
+
+    return prime
+
+
 def isWinner(x, nums):
     """
     Method that determine the winner of a prime number
@@ -18,30 +36,14 @@ def isWinner(x, nums):
         return name of the player that won the most rounds
     """
 
-    if x == 0 or not nums:
+    if x is None or nums is None or x == 0 or nums == []:
         return None
 
     Maria, Ben = 0, 0
-    i = 1
 
-    for n in nums:
-        if n < 2:
-            Ben += 1
-            continue
-
-        # Sieve of Eratosthenes
-        prime = [True] * (n + 1)
-        p = 2
-
-        while p * p <= n:
-            if prime[p] == True:
-                for i in range(p * p, n + 1, p):
-                    prime[i] = False
-            p += 1
-
-        # Determine the winner of the round based on the count of primes
-        prime_count = sum(prime)
-        if prime_count % 2 == 0:
+    for i in range(x):
+        primes = prime(nums[i])
+        if len(primes) % 2 == 0:
             Ben += 1
         else:
             Maria += 1
