@@ -9,7 +9,7 @@ def SieveOfEratosthenes(n):
     while (p * p <= n):
         if (prime[p] == True):
             # print(prime[p])
-            for i in range(p * p, n+1, p):
+            for i in range(p*p, n+1, p):
                 prime[i] = False
         p += 1
     
