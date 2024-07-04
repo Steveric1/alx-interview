@@ -7,20 +7,17 @@ number choose in the given set of numbers.
 
 
 def prime(n):
+    """Return list of prime numbers between 1 and n inclusive
+       Args:
+        n (int): upper boundary of range. lower boundary is always 1
     """
-    Return list of prime numbers between 1 and n inclusive
-    Args:
-       n(int): upper boundary of range. lower boundary is always 1
-    """
-    prime = [True] * (n + 1)
-    p = 2
-
-    while p * p < n:
-        if prime[p] == True:
-            for i in range(p * p, n + 1, p):
-                prime[i] = False
-        p += 1
-
+    prime = []
+    sieve = [True] * (n + 1)
+    for p in range(2, n + 1):
+        if (sieve[p]):
+            prime.append(p)
+            for i in range(p, n + 1, p):
+                sieve[i] = False
     return prime
 
 
