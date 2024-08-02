@@ -25,7 +25,7 @@ Below are the must-know questions categorized by their respective directories. E
 8. [0x07. Rotate 2D Matrix](https://github.com/Steveric1/alx-interview/tree/master/0x07-rotate_2d_matrix)
 9. [0x08. Making Change](https://github.com/Steveric1/alx-interview/tree/master/0x08-making_change)
 10. [0x09-island_perimeter](https://github.com/Steveric1/alx-interview/tree/master/0x09-island_perimeter)
-11. [0x0A-primegame]{https://github.com/Steveric1/alx-interview/tree/master/0x0A-primegame}
+11. [0x0A-primegame](https://github.com/Steveric1/alx-interview/tree/master/0x0A-primegame)
 
 
 ### Future Updates
