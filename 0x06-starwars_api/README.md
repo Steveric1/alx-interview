@@ -34,7 +34,7 @@ Write a script that prints all characters of a Star Wars movie:
 - You must use the Star wars API
 - You must use the request module
 
-```python
+```javascript
 /0x06$ ./0-starwars_characters.js 3
 Luke Skywalker
 C-3PO
