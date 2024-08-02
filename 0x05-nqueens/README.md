@@ -1,20 +1,47 @@
-# N queens
-</hr>
+# 0x05. N Queens
 
-The N queens puzzle is a challenge of placing N non-attacking queens on an NxN chessboard.
+### Must Know
+The “0x05. N queens” project is a classic problem in computer science and mathematics, known for its application of the backtracking algorithm to place N non-attacking queens on an N×N chessboard. To successfully complete this project, you will need to understand several key concepts and have access to resources that will help you grasp the necessary algorithms and techniques.
 
-On a chessboard, the queen can move any number of squares vertically, horizontally or diagonally.Thus, to solve the puzzle, each queen must be placed on its own row, column and diagonal.
+### Concepts Needed:
+#### 1. Backtracking Algorithms:
+- Understanding how backtracking algorithms work to explore all potential solutions to a problem and backtrack when a solution cannot be completed.
+- Backtracking Introduction
 
-This is most efficiently solved using a backtracking algorithm. Backtracking is a general algorithm for finding solutions to some computational problems that incrementally builds candidates to the solutions, and abandons a candidate i.e., backtracks as soon as it determines that the candidate cannot possibly be completed to a valid solution.
-## Usage
+#### 2. Recursion:
+- Using recursive functions to implement backtracking algorithms.
+Recursion in Python
 
-`nqueens N`
+#### 3. List Manipulations in Python:
+- Creating and manipulating lists, especially to store the positions of queens on the board.
+- Python Lists
 
-where N is the number of queens. - N must be an integer greater or equal to 4 - the program prints every possible solution to the problem in the format shown below
+#### 4. Python Command Line Arguments:
+- Handling command-line arguments with the sys module.
+- Command Line Arguments in Python
 
-    `$ ./0-nqueens 4
-    [[0, 1], [1, 3], [2, 0], [3, 2]]
-    [[0, 2], [1, 0], [2, 3], [3, 1]]
-    `
+### Interview Question
+The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
 
-Each inner list represents the coordinates of a queen in the NxN chessboard.
+- Usage: nqueens N
+    - If the user called the program with the wrong number of arguments, print Usage: nqueens N, followed by a new line, and exit with the status 1
+- where N must be an integer greater or equal to 4
+    - If N is not an integer, print N must be a number, followed by a new line, and exit with the status 1
+    - If N is smaller than 4, print N must be at least 4, followed by a new line, and exit with the status 1
+- The program should print every possible solution to the problem
+    - One solution per line
+    - Format: see example
+    - You don’t have to print the solutions in a specific order
+- You are only allowed to import the sys module
+
+**Read**: Queen, Backtracking
+
+```python
+julien@ubuntu:~/0x08. N Queens$ ./0-nqueens.py 4
+[[0, 1], [1, 3], [2, 0], [3, 2]]
+[[0, 2], [1, 0], [2, 3], [3, 1]]
+julien@ubuntu:~/0x08. N Queens$ ./0-nqueens.py 6
+[[0, 1], [1, 3], [2, 5], [3, 0], [4, 2], [5, 4]]
+[[0, 2], [1, 5], [2, 1], [3, 4], [4, 0], [5, 3]]
+[[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]
+[[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
