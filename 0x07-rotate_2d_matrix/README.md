@@ -25,13 +25,14 @@ For the “0. Rotate 2D Matrix” project, you are tasked with implementing an i
 
 ### Resources:
 - #### Python Official Documentation:
-    - Data Structures (list comprehensions, nested list comprehension)
-    - More on Lists
+    - [Data Structures (list comprehensions, nested list comprehension)](https://docs.python.org/3/tutorial/datastructures.html)
+    - [More on Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
 - #### GeeksforGeeks Articles:
-    - Inplace rotate square matrix by 90 degrees
-    - Transpose a matrix in Single line in Python
+    - [Inplace rotate square matrix by 90 degrees](https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/)
+    - [Transpose a matrix in Single line in Python](https://www.geeksforgeeks.org/transpose-matrix-single-line-python/)
 - #### TutorialsPoint:
-    - Python Lists for basics of list manipulation in Python.
+    - [Python Lists for basics of list manipulation in Python.
+](https://www.tutorialspoint.com/python/python_lists.htm)
 
 ### Interview Question
 Given an n x n 2D matrix, rotate it 90 degrees clockwise.
