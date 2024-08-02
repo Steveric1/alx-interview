@@ -28,10 +28,10 @@ For the “0. Change comes from within” project, you will tackle a classic pro
 - #### Python Official Documentation:
     - [More Control Flow Tools (for loops, if statements)](https://docs.python.org/3/tutorial/controlflow.html)
 - #### GeeksforGeeks Articles:
-    - Coin Change | DP-7[GeeksforGeeks](https://www.geeksforgeeks.org/coin-change-dp-7/)
-    - Greedy Algorithm to find Minimum number of Coins[GeeksforGeeks](https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/)
+    - [Coin Change | DP-7](https://www.geeksforgeeks.org/coin-change-dp-7/)
+    - [Greedy Algorithm to find Minimum number of Coins](https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/)
 - #### YouTube Tutorials
-    - Python Lists for basics of list manipulation in Python.[YouTube](https://www.youtube.com/watch?v=jgiZlGzXMBw)
+    - [Python Lists for basics of list manipulation in Python.](https://www.youtube.com/watch?v=jgiZlGzXMBw)
 
 ### Interview Question
 Given a pile of coins of different values, determine the fewest number of coins needed to meet a given amount total.
