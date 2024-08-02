@@ -26,7 +26,7 @@ For the “0. Change comes from within” project, you will tackle a classic pro
 
 ### Resources:
 - #### Python Official Documentation:
-    - More Control Flow Tools (for loops, if statements)[Python](https://docs.python.org/3/tutorial/controlflow.html)
+    - [More Control Flow Tools (for loops, if statements)](https://docs.python.org/3/tutorial/controlflow.html)
 - #### GeeksforGeeks Articles:
     - Coin Change | DP-7[GeeksforGeeks](https://www.geeksforgeeks.org/coin-change-dp-7/)
     - Greedy Algorithm to find Minimum number of Coins[GeeksforGeeks](https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/)
