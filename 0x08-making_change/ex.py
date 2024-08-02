@@ -47,5 +47,8 @@ def makeChange(coins, total):
     return dp[total] if dp[total] != float('inf') else -1
     
 if __name__ == "__main__":
-    print(makeChange([1, 2, 25], 37))
-    print(makeChange([1256, 54, 48, 16, 102], 1453))
+   print(makeChange([1, 5, 6, 9], 11))
+   print(makeChange([1, 2, 5], 11))
+   print(makeChange( [1, 3, 4], 6))
+   
+   print(makeChange([1256, 54, 48, 16, 102], 1453))
